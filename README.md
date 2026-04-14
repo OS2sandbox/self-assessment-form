@@ -26,7 +26,7 @@ A simple web-based alternative to the current [Markdown-based governance assessm
 
 ### Using the hosted form
 
-Visit the live form: **[self-assessment-form](https://OS2offdig.github.io/self-assessment-form)**
+Visit the live form: **[TBD](https://)**
 
 
 
@@ -35,7 +35,7 @@ Visit the live form: **[self-assessment-form](https://OS2offdig.github.io/self-a
 ## Tech Stack
 
 - **Form Engine**: JSON Schema based (TBD implementation)
-- **Deployment**: GitHub Pages (Forgejo Pages compatibility planned)
+- **Deployment**: GitHub Pages (with future Forgejo Pages compatibility)
 
 [//]: # ( license )
 
