@@ -17,7 +17,7 @@ A simple web-based alternative to the current [Markdown-based governance assessm
 
 - **Easy to use** — Intuitive web interface, no technical skills required
 
-- **Export ready** — JSON output integrates with other loosely coupled Ops workflows
+- **Export ready** — Output data format integrates with other loosely coupled  workflows for future conversion or visualization/reporting.
 - **Standards-based** — Based in Open Standards Schema for flexibility and reuse.
 
 [//]: # ( getting started )
