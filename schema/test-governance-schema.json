@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OS2 Governance Self-Assessment Test",
+  "type": "object",
+  "required": ["productName", "assessmentDate", "responsibleParty"],
+  "properties": {
+    "productName": {
+      "title": "Product Name",
+      "type": "string",
+      "maxLength": 100
+    },
+    "assessmentDate": {
+      "title": "Assessment Date",
+      "type": "string",
+      "format": "date"
+    },
+    "responsibleParty": {
+      "title": "Responsible Party",
+      "type": "object",
+      "required": ["name", "email"],
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "email": {
+          "title": "Email",
+          "type": "string",
+          "format": "email"
+        }
+      }
+    },
+    "summary": {
+      "title": "Summary",
+      "type": "string",
+      "maxLength": 500
+    },
+    "status": {
+      "title": "Assessment Status",
+      "type": "string",
+      "enum": ["not_started", "in_progress", "completed", "on_hold"],
+      "default": "not_started"
+    }
+  }
+}
