@@ -8,12 +8,12 @@ async function init() {
 
         new Jedison.Create({
             container: document.getElementById('form'),
-            theme: new Jedison.Theme(),
+            theme: new Jedison.ThemeBootstrap5(),
             schema: schema
         });
     } catch (e) {
         console.error(e);
-        document.getElementById('form').innerHTML = '<p style="color:red">Error: ' + e.message + '</p>';
+        document.getElementById('form').innerHTML = '<p class="text-danger">Error: ' + e.message + '</p>';
     }
 }
 
