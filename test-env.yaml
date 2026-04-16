@@ -31,7 +31,7 @@ spec:
       type: Directory
   - name: public-assets
     hostPath:
-      path: ./public
+      path: .
       type: Directory
   - name: schema-volume
     hostPath:
