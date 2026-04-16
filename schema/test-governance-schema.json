@@ -1,45 +1,399 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "OS2 Governance Self-Assessment Test",
+  "x-format": "categories-horizontal",
   "type": "object",
-  "required": ["productName", "assessmentDate", "responsibleParty"],
+  "title": "OS2 Governance Evaluering",
+  "x-categoryOrder": ["Relevans", "Formkrav", "Strategisk sammenhæng", "Governance"],
+  "x-objectAdd": false,
+  "x-titleHidden": true,
   "properties": {
-    "productName": {
-      "title": "Product Name",
+    "R1": {
+      "title": "R1 - Løsningen skaber lokal værdi",
+      "description": "Standard: Produktet giver konkret og dokumenterbar værdi for den enkelte myndighed.",
       "type": "string",
-      "maxLength": 100
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Relevans"
     },
-    "assessmentDate": {
-      "title": "Assessment Date",
+    "R2": {
+      "title": "R2 - Løsningen er accepteret af lokal linjeledelse",
+      "description": "Standard: Linjeledelsen har bakket op om deltagelsen i udviklingen og anvendelsen.",
       "type": "string",
-      "format": "date"
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Relevans"
     },
-    "responsibleParty": {
-      "title": "Responsible Party",
-      "type": "object",
-      "required": ["name", "email"],
-      "properties": {
-        "name": {
-          "title": "Name",
-          "type": "string"
-        },
-        "email": {
-          "title": "Email",
-          "type": "string",
-          "format": "email"
-        }
-      }
-    },
-    "summary": {
-      "title": "Summary",
+    "R3": {
+      "title": "R3 - Løsningen har fælles offentligt potentiale",
+      "description": "Standard: Kan skabe værdi og genbruges på tværs af myndigheder.",
       "type": "string",
-      "maxLength": 500
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Relevans"
     },
-    "status": {
-      "title": "Assessment Status",
+    "R4": {
+      "title": "R4 - Ophæng til nationale strategier er til stede",
+      "description": "Standard: Understøtter fx digitaliseringsstrategi og fællesoffentlige mål.",
       "type": "string",
-      "enum": ["not_started", "in_progress", "completed", "on_hold"],
-      "default": "not_started"
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Relevans"
+    },
+    "F1": {
+      "title": "F1 - Kildekode i OS2-repositorie",
+      "description": "Standard: Kodebasen er tilgængelig og udvikles åbent på GitHub i OS2-kontrolleret organisation.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Formkrav"
+    },
+    "F2": {
+      "title": "F2 - Open Source-licenskriterier overholdes",
+      "description": "Standard: Godkendt Open Source Licens (fx MPL-2.0) er tydeligt angivet og anvendt.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Formkrav"
+    },
+    "F3": {
+      "title": "F3 - Udbudsregler og almindelig lovformlighed er overholdt",
+      "description": "Standard: Projektet følger udbudsregler og gældende lovgivning.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Formkrav"
+    },
+    "F4": {
+      "title": "F4 - Der er tænkt på sikkerheden i løsningen",
+      "description": "Standard: Der forefindes dokumenteret sikkerhedsarbejde og/eller procedurer.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Formkrav"
+    },
+    "F5": {
+      "title": "F5 - Løsningens formål og værdi er beskrevet",
+      "description": "Standard: Formål og værdi er klart beskrevet, gerne i en README tilknyttet kodebasen.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Formkrav"
+    },
+    "F6": {
+      "title": "F6 - Kildekoden er overdraget og placeret under OS2's GitHub",
+      "description": "Standard: Koden er juridisk overdraget og hostes under OS2's GitHub.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Formkrav"
+    },
+    "F7": {
+      "title": "F7 - Dokumentation udarbejdes med og overholder OS2's standardskabelon",
+      "description": "Standard: Dokumentation i åbent format (fx Markdown) og OS2's skabelon anvendt.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Formkrav"
+    },
+    "F10": {
+      "title": "F10 - OS2's kommunikationskanaler anvendes",
+      "description": "Standard: Information findes på os2.eu.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Formkrav"
+    },
+    "F11": {
+      "title": "F11 - Offentlig issue-tracking anvendes",
+      "description": "Standard: Opgaver (issues) og kodeændringer spores offentligt og tilknyttes GitHub.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Formkrav"
+    },
+    "F12": {
+      "title": "F12 - Kun én version af core-koden (master)",
+      "description": "Standard: Ingen parallelle versioner af kodebasen.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Formkrav"
+    },
+    "F13": {
+      "title": "F13 - Præsentationsmateriale af løsningen er udarbejdet",
+      "description": "Standard: Der findes præsentationer om produktet.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Formkrav"
+    },
+    "F14": {
+      "title": "F14 - Kommunikationsmateriale til strategisk niveau",
+      "description": "Standard: Der findes materialer målrettet ledelse og strategi.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Formkrav"
+    },
+    "F15": {
+      "title": "F15 - Best practice for implementering i organisationen dokumenteres",
+      "description": "Standard: Vejledninger og erfaringer er beskrevet.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Formkrav"
+    },
+    "F16": {
+      "title": "F16 - Teknisk dokumentation indeholder best practice for kodestandarder",
+      "description": "Standard: Kodestandarder dokumenteret, relevant dokumentation til udviklere.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Formkrav"
+    },
+    "F17": {
+      "title": "F17 - Drifts- og vedligeholdelsessetup er beskrevet",
+      "description": "Standard: Driftmiljø og procedurer for vedligehold beskrevet.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Formkrav"
+    },
+    "F18": {
+      "title": "F18 - Rammearkitektur og standarder er fulgt og afvigelser forklaret",
+      "description": "Standard: Overensstemmelse med rammearkitektur er beskrevet.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Formkrav"
+    },
+    "F19": {
+      "title": "F19 - Løsningen leveret i containerformat",
+      "description": "Standard: Fx Docker anvendes.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Formkrav"
+    },
+    "F20": {
+      "title": "F20 - Uddannelsesmateriale er udarbejdet",
+      "description": "Standard: Undervisningsmaterialer findes.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Formkrav"
+    },
+    "F21": {
+      "title": "F21 - Politisk kommunikation er udarbejdet",
+      "description": "Standard: Materialer målrettet politikere og offentlighed er udarbejdet.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Formkrav"
+    },
+    "F22": {
+      "title": "F22 - Procesplan og procesansvar for drift er udarbejdet",
+      "description": "Standard: Dokumenteret proces og ansvar ifm. idriftsættelse.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Formkrav"
+    },
+    "S1": {
+      "title": "S1 - Kobling til OS2's strategi",
+      "description": "Standard: Understøtter OS2's mission og vision.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Strategisk sammenhæng"
+    },
+    "S2": {
+      "title": "S2 - Løsningen understøtter innovation og open source",
+      "description": "Standard: Fremmer innovation og åbenhed.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Strategisk sammenhæng"
+    },
+    "S3": {
+      "title": "S3 - Kobling til OS2's mission, vision og strategi er beskrevet",
+      "description": "Standard: Forbindelsen er beskrevet.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Strategisk sammenhæng"
+    },
+    "S4": {
+      "title": "S4 - Vision og strategi for produktet er udarbejdet",
+      "description": "Standard: Der findes en formel vision og strategi for produktet.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Strategisk sammenhæng"
+    },
+    "S5": {
+      "title": "S5 - Produktets overensstemmelse med OS2's vision og strategi",
+      "description": "Standard: Tydelig sammenhæng og beskrivelse.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Strategisk sammenhæng"
+    },
+    "G1": {
+      "title": "G1 - Produktet i OS2 portefølje",
+      "description": "Standard: Findes i OS2's porteføljedatabase, hjemmeside og årshjul.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Governance"
+    },
+    "G2": {
+      "title": "G2 - Der koordineres løbende med OS2-sekretariatet",
+      "description": "Standard: Der er løbende kontakt med sekretariatet.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Governance"
+    },
+    "G3": {
+      "title": "G3 - Projektleder/tovholder er udpeget",
+      "description": "Standard: Der er udpeget en fast kontaktperson/koordinator.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Governance"
+    },
+    "G4": {
+      "title": "G4 - Bestyrelsen er orienteret",
+      "description": "Standard: Bestyrelsen kender til projektet.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Governance"
+    },
+    "G5": {
+      "title": "G5 - Bestyrelsen har godkendt produktet",
+      "description": "Standard: Formelt godkendt i referater.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Governance"
+    },
+    "G6": {
+      "title": "G6 - Der er nedsat en styregruppe",
+      "description": "Standard: Der findes en aktiv styregruppe.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Governance"
+    },
+    "G7": {
+      "title": "G7 - Der er nedsat en koordinationsgruppe",
+      "description": "Standard: Der findes en aktiv koordinationsgruppe.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Governance"
+    },
+    "G8": {
+      "title": "G8 - Projektmodel anvendes og dokumenteret (anbefaling)",
+      "description": "Standard: Der arbejdes efter en dokumenteret projektmodel.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Governance"
+    },
+    "G9": {
+      "title": "G9 - Review af kode foretages af tredjepart (anbefaling)",
+      "description": "Standard: Uafhængig kodegennemgang gennemføres og procedure er beskrevet.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Governance"
+    },
+    "G10": {
+      "title": "G10 - Tilslutningserklæring til sikring af økonomi (anbefaling)",
+      "description": "Standard: OS2-tilslutningsaftale findes og er effektueret.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Governance"
+    },
+    "G11": {
+      "title": "G11 - Bestyrelsen har godkendt styregruppen",
+      "description": "Standard: Formelt godkendt i referater.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Governance"
+    },
+    "G12": {
+      "title": "G12 - Bestyrelsen er repræsenteret i styregruppen",
+      "description": "Standard: Bestyrelsesmedlem deltager.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Governance"
+    },
+    "G13": {
+      "title": "G13 - Aftale sikrer økonomi til koordinering og videreudvikling",
+      "description": "Standard: Aftaler om finansiering er på plads og budget udarbejdet.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Governance"
+    },
+    "G14": {
+      "title": "G14 - Fagligt fællesskab bag løsningen",
+      "description": "Standard: Aktivt fællesskab, fx brugerklub, forum eller andet netværk.",
+      "type": "string",
+      "enum": ["green", "yellow", "red"],
+      "x-enumTitles": ["🟢 Grøn - Fuldt opfyldt", "🟡 Gul - Delvist opfyldt", "🔴 Rød - Ikke opfyldt"],
+      "x-format": "select",
+      "x-category": "Governance"
     }
-  }
+  },
+  "required": ["R1", "R2", "R3", "R4", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F10", "F11", "F12", "F13", "F14", "F15", "F16", "F17", "F18", "F19", "F20", "F21", "F22", "S1", "S2", "S3", "S4", "S5", "G1", "G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12", "G13", "G14"]
 }
