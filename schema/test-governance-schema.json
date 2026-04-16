@@ -6,7 +6,66 @@
   "x-categoryOrder": ["Relevans", "Formkrav", "Strategisk sammenhæng", "Governance"],
   "x-objectAdd": false,
   "x-titleHidden": true,
+  "x-categoriesDefaultLabel": "Grunddata",
   "properties": {
+    "produktnavn": {
+      "title": "Produktnavn",
+      "type": "string",
+      "description": "Navnet på det produkt der evalueres"
+    },
+    "dato": {
+      "title": "Dato for udfyldelse",
+      "type": "string",
+      "x-format": "flatpickr",
+      "x-flatpickr": { "dateFormat": "d-m-Y" }
+    },
+    "githubOrg": {
+      "title": "GitHub organisation",
+      "type": "string",
+      "description": "fx: OS2offdig",
+      "minLength": 1,
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9-_]*$",
+      "x-messages": {
+        "pattern": "Kun bogstaver, tal og bindestreg tilladt",
+        "minLength": "Skal udfyldes"
+      },
+      "x-inputAttributes": { "placeholder": "OS2offdig" }
+    },
+    "githubRepo": {
+      "title": "GitHub repository",
+      "type": "string",
+      "description": "fx: governance_report_template",
+      "minLength": 1,
+      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9-_]*$",
+      "x-messages": {
+        "pattern": "Kun bogstaver, tal og bindestreg tilladt",
+        "minLength": "Skal udfyldes"
+      },
+      "x-inputAttributes": { "placeholder": "repo-navn" }
+    },
+    "websiteLink": {
+      "title": "OS2 website link",
+      "type": "string",
+      "minLength": 10,
+      "pattern": "^https?://",
+      "x-messages": {
+        "pattern": "Skal starte med http:// eller https://",
+        "minLength": "Skal være mindst 10 tegn"
+      },
+      "description": "Link til produktets side på os2.eu"
+    },
+    "auditor": {
+      "title": "Auditor",
+      "type": "string",
+      "description": "Navn og email",
+      "minLength": 3,
+      "pattern": ".+@.+\\..+",
+      "x-messages": {
+        "pattern": "Skal være en gyldig emailadresse",
+        "minLength": "Skal udfyldes"
+      },
+      "x-inputAttributes": { "placeholder": "Navn, email@domæne.dk" }
+    },
     "R1": {
       "title": "R1 - Løsningen skaber lokal værdi",
       "description": "Standard: Produktet giver konkret og dokumenterbar værdi for den enkelte myndighed.",
@@ -395,5 +454,5 @@
       "x-category": "Governance"
     }
   },
-  "required": ["R1", "R2", "R3", "R4", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F10", "F11", "F12", "F13", "F14", "F15", "F16", "F17", "F18", "F19", "F20", "F21", "F22", "S1", "S2", "S3", "S4", "S5", "G1", "G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12", "G13", "G14"]
+  "required": ["produktnavn", "dato", "githubOrg", "githubRepo", "websiteLink", "auditor", "R1", "R2", "R3", "R4", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F10", "F11", "F12", "F13", "F14", "F15", "F16", "F17", "F18", "F19", "F20", "F21", "F22", "S1", "S2", "S3", "S4", "S5", "G1", "G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12", "G13", "G14"]
 }
