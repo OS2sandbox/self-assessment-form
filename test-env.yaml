@@ -22,6 +22,8 @@ spec:
       readOnly: true
     - name: schema-volume
       mountPath: /usr/share/caddy/schema
+    - name: data-volume
+      mountPath: /usr/share/caddy/data
   volumes:
   - name: caddy-config-dir
     hostPath:
@@ -34,4 +36,8 @@ spec:
   - name: schema-volume
     hostPath:
       path: ./schema
+      type: Directory
+  - name: data-volume
+    hostPath:
+      path: ./data
       type: Directory
