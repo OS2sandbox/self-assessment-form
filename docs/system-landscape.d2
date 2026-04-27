@@ -1,0 +1,44 @@
+vars: {
+  d2-config: {
+    layout-engine: elk
+    # Terminal theme code
+    theme-id: 300
+  }
+}
+
+c4-system:  |md 
+ # System Landscape
+ _For the self assessment form project_
+|
+
+github_pages: "" {
+  shape: rectangle
+  label: "GitHub Pages"
+}
+
+json_schemas: {
+  shape: stored_data
+  label: "JSON Schemas"
+}
+
+developer: {
+  shape: c4-person
+  label: "Developer"
+}
+
+user: {
+  shape: c4-person
+  label: "User"
+}
+
+self_assessment_form: {
+  shape: page
+  label: "Self Assessment Form"
+}
+
+user -> self_assessment_form : evaluates product with
+developer ->  json_schemas : develops
+self_assessment_form -> github_pages : hosted on
+self_assessment_form -> json_schemas : loads schemas from
+
+
